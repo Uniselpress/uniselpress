@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNISEL PRESS: News, Events, Bulletin</title>
+  <style>
+    /* Reset margin and padding for body and html to avoid unexpected spaces */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Logo container styling to center the logo */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0;
+    }
+
+    .floating-menu {
+      position: relative;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .floating-menu ul {
+      list-style-type: none;
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+      display: inline-block;
+      background-color: none;
+    }
+
+    .floating-menu li {
+      float: left;
+    }
+
+    .floating-menu li a {
+      display: block;
+      color: #ff5757;
+      text-align: center;
+      padding: 10px 60px;
+      text-decoration: none;
+    }
+
+    .floating-menu li a:hover {
+      background-color: #FFD366;
+    }
+
+    .floating-menu li.dropdown {
+      display: inline-block;
+    }
+
+    .floating-menu .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: none;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .floating-menu .dropdown-content a {
+      color: #ff5757;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .floating-menu .dropdown-content a:hover {
+      background-color: #FFD366;
+    }
+
+    .floating-menu .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .floating-menu a.active {
+      background-color: #FFA966;
+      color: #800000;
+    }
+    /* Digital clock styles */
+    .clock-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      color: darkorange;
+      font-size: 18px;
+      text-align: center;
+      z-index: 1000; /* Ensure the clock is on top */
+      background-color: #fff; /* Background color for better visibility */
+      padding: 10px; /* Padding for better visibility */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      font-family: Arial, sans-serif;
+    }
+
+footer {
+        width: 100%;
+        background-color: orange;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        font-family: Arial, sans-serif; /* Set font to Arial */
+    }
+
+    footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; /* Align items at the start of the flex container */
+        flex-wrap: wrap; /* Allow content to wrap if necessary */
+        width: 100%; /* Ensure the container spans full width */
+        max-width: 1200px;
+        margin: 0 auto; /* Center the content within the container */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    footer .container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-align items in the column */
+        margin: 10px; /* Add margin for spacing */
+        text-align: center; /* Center-align text in all sections */
+    }
+
+    footer .container .contact-info,
+    footer .container .operation-hours,
+    footer .container .social-media {
+        flex: 1; /* Allow sections to grow equally */
+    }
+
+    footer .container .contact-info,
+    footer .container .operation-hours {
+        margin-right: 20px; /* Space between sections */
+    }
+
+    footer .container .social-media {
+        margin-right: 20px; /* Space between sections */
+    }
+
+    footer .container .social-media a {
+        margin: 0 10px; /* Space between social media icons */
+        text-decoration: none;
+    }
+
+    footer .container .social-media img {
+        width: 24px; /* Set a consistent size for social media icons */
+        height: 24px;
+    }
+
+    footer .container .copyright {
+        width: 100%;
+        text-align: center; /* Center-align text in the copyright section */
+        font-size: 14px;
+        color: black;
+        margin-top: 20px; /* Add space above the copyright section */
+    }
+
+
+    /* Section Styling */
+    .section {
+      padding: 20px;
+      margin: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .section h2 {
+      color: black;
+      border-bottom: 2px solid darkorange;
+      padding-bottom: 10px;
+    }
+
+    .section .line {
+      border-top: 0px solid #ff5757;
+      margin: 20px 0;
+    }
+
+    .section img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 10px 0;
+    }
+
+    .section p {
+      margin: 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo -->
+  <div align="center">
+    <br><br><img src="img/logo.jpg" width="15%"><br><br>
+  </div>
+
+  <!-- Navigation Menu -->
+  <div class="floating-menu">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="dropdown">
+        <a href="aboutuniselpress.html">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="aboutuniselpress.html">About Unisel Press</a>
+          <a href="organizationalstructure.html">Organizational Structure</a>
+          <a href="staff.html">Staff</a>
+          <a href="publicationcommittee.html">Publication Committee</a>
+        </div>
+      </li>
+      <li><a href="proposalguideline.html">PROPOSAL GUIDELINE</a></li>
+      <li class="dropdown">
+        <a href="manuscript.html" >MANUSCRIPT</a>
+        <div class="dropdown-content">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScE2DLeZkR11A5TMOu4GbX-dpIGzn7v4JA_s-F77W1zzr58kA/viewform?usp=pp_url" target="_blank">Book Manuscript Review Form</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="publication.html">PUBLICATION</a>
+        <div class="dropdown-content">
+          <a href="journalpublication.html">Journal Publication</a>
+          <a href="listofpublication.html">List of Publication</a>
+        </div>
+      </li>
+      <li><a href="sales.html">SALES</a></li>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <!-- News Section -->
+  <div class="section">
+    <h2>News</h2>
+    <div class="line"></div>
+    <p>Description for news. Stay updated with the latest news and updates from Unisel Press.</p>
+    <img src="img/news.jpg" alt="News Image 1">
+    <img src="img/news.jpg" alt="News Image 2">
+  </div>
+
+  <!-- Events Section -->
+  <div class="section">
+    <h2>Events</h2>
+    <div class="line"></div>
+    <p>Description for events. Discover the upcoming events and activities organized by Unisel Press.</p>
+    <img src="img/news.jpg" alt="Event Image 1">
+    <img src="img/news.jpg" alt="Event Image 2">
+  </div>
+
+  <!-- Bulletin Section -->
+  <div class="section">
+    <h2>Bulletin</h2>
+    <div class="line"></div>
+    <p>Description for bulletin. Check out our latest bulletins and publications.</p>
+    <img src="img/news.jpg" alt="Bulletin Image 1">
+    <img src="img/news.jpg" alt="Bulletin Image 2">
+  </div>
+
+  <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="contact-info">
+            <p><strong>Mailing Address</strong><br><i>Alamat Surat-menyurat</i></p>
+            <p>Penerbit Unisel<br>
+            Jalan Zirkon A7/A Seksyen 7<br>
+            40000 Shah Alam, Selangor<br>
+            Malaysia.</p>
+        </div>
+        
+        <div class="operation-hours">
+            <p><strong>Contact Details</strong><br><i>Butiran Perhubungan</i></p>
+            <p>Phone: +603-XXXXXXX<br>
+            Mobile: +6012-3393066<br>
+            Fax: +603-XXXXXXXXX<br>
+            Email: <a href="mailto:sidin@unisel.edu.my">sidin@unisel.edu.my</a> (Director)<br>
+            Email: <a href="mailto:uniselpress@gmail.com">uniselpress@gmail.com</a></p>
+        </div>
+
+        <div class="operation-hours">
+            <p><strong>Operation Hour</strong><br><i>Masa Operasi</i></p>
+            <p>Monday - Thursday 08:30 - 17:30<br>
+            Friday 08:30 - 17:30<br>
+            Weekday Close</p>
+        </div>
+
+        <div class="social-media">
+            <p><strong>Follow us at:</strong><br><i>Ikuti kami di:</i></p>
+            <a href="https://www.facebook.com/p/UNISEL-LIBRARY-100057472239050/?locale=ms_MY" target="_blank"><img src="img/fb.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/unisel.library/?hl=en" target="_blank"><img src="img/ig.jpg" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@unisellibrary" target="_blank"><img src="img/tiktok.jpg" alt="TikTok"></a>
+        </div>
+        <div class="copyright">
+            <p>Copyright © 2024 Unisel Press</p>
+            <p>Best viewed using Google Chrome, Mozilla Firefox and Internet Explorer 9.0+ with a resolution of 1366x768 or higher</p>
+        </div>
+    </div>
+</footer>
+
+
+  <div class="clock-container" id="digital-clock"></div>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+
+      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var day = days[now.getDay()];
+
+      var date = now.getDate().toString().padStart(2, '0');
+      var month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-indexed
+      var year = now.getFullYear();
+
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+
+      var timeString = hours + ':' + minutes + ':' + seconds;
+      var dateString = day + ', ' + date + '/' + month + '/' + year;
+
+      document.getElementById('digital-clock').textContent = dateString + ' ' + timeString;
+    }
+
+    setInterval(updateClock, 1000); // Update every second
+    updateClock(); // Initial call to display the clock immediately
+  </script>
+</body>
+</html>
