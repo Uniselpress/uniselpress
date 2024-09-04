@@ -102,7 +102,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      padding: 20px;
+      padding: 0px;
     }
 
     .book-item {
@@ -174,7 +174,7 @@
       font-family: Arial, sans-serif;
     }
 
-footer {
+    footer {
         width: 100%;
         background-color: orange;
         box-sizing: border-box; /* Include padding and border in the element's total width and height */
@@ -212,17 +212,20 @@ footer {
     }
 
     footer .container .social-media {
-        margin-right: 20px; /* Space between sections */
+    display: inline-block;
+    flex-direction: row; /* Align items vertically */
+    align-items: center; /* Center align icons horizontally */
+    gap: 10px; /* Space between social media icons */
     }
 
     footer .container .social-media a {
-        margin: 0 10px; /* Space between social media icons */
+        margin: 0; /* Remove horizontal margin */
         text-decoration: none;
     }
 
     footer .container .social-media img {
-        width: 24px; /* Set a consistent size for social media icons */
-        height: 24px;
+        width: 35px; /* Set a consistent size for social media icons */
+        height: 35px;
     }
 
     footer .container .copyright {
@@ -446,7 +449,7 @@ footer {
 <footer>
     <div class="container">
         <div class="contact-info">
-            <p><strong>Mailing Address</strong><br><i>Alamat Surat-menyurat</i></p>
+            <p><strong>Mailing Address</strong></p>
             <p>Penerbit Unisel<br>
             Jalan Zirkon A7/A Seksyen 7<br>
             40000 Shah Alam, Selangor<br>
@@ -454,7 +457,7 @@ footer {
         </div>
         
         <div class="operation-hours">
-            <p><strong>Contact Details</strong><br><i>Butiran Perhubungan</i></p>
+            <p><strong>Contact Details</strong></p>
             <p>Phone: +603-XXXXXXX<br>
             Mobile: +6012-3393066<br>
             Fax: +603-XXXXXXXXX<br>
@@ -463,18 +466,19 @@ footer {
         </div>
 
         <div class="operation-hours">
-            <p><strong>Operation Hour</strong><br><i>Masa Operasi</i></p>
-            <p>Monday - Thursday 08:30 - 17:30<br>
-            Friday 08:30 - 17:30<br>
-            Weekday Close</p>
+            <p><strong>Operation Hours</strong></p>
+            <p>Monday - Friday: 08:30 - 17:30<br>
+            Saturday & Sunday: CLOSED<br>
+            Public Holiday: CLOSED</p>
         </div>
 
         <div class="social-media">
-            <p><strong>Follow us at:</strong><br><i>Ikuti kami di:</i></p>
-            <a href="https://www.facebook.com/p/UNISEL-LIBRARY-100057472239050/?locale=ms_MY" target="_blank"><img src="img/fb.jpg" alt="Facebook"></a>
+            <p><strong>Follow us:</strong></p>
+            <br><a href="https://www.facebook.com/p/UNISEL-LIBRARY-100057472239050/?locale=ms_MY" target="_blank"><img src="img/fb.jpg" alt="Facebook"></a>
             <a href="https://www.instagram.com/unisel.library/?hl=en" target="_blank"><img src="img/ig.jpg" alt="Instagram"></a>
             <a href="https://www.tiktok.com/@unisellibrary" target="_blank"><img src="img/tiktok.jpg" alt="TikTok"></a>
         </div>
+
         <div class="copyright">
             <p>Copyright © 2024 Unisel Press</p>
             <p>Best viewed using Google Chrome, Mozilla Firefox and Internet Explorer 9.0+ with a resolution of 1366x768 or higher</p>
