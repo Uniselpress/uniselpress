@@ -316,9 +316,9 @@
     width: 50%; /* Adjust logo size on mobile */
   }
 
-  /* Make the navigation menu vertical */
+  /* Make the navigation menu horizontal */
   .floating-menu ul {
-    flex-direction: column;
+    flex-direction: row;
   }
 
   .floating-menu li a {
@@ -327,23 +327,23 @@
 
   /* Adjust book gallery for smaller screens */
   .book-gallery {
-    flex-direction: column; /* Stack the books vertically on mobile */
+    flex-direction: row; /* Stack the books horizontally on mobile */
     align-items: center;
   }
 
   .book {
-    width: 80%; /* Reduce book size */
+    width: 50%; /* Reduce book size */
     margin: 10px;
   }
 
   /* Footer styling for smaller devices */
   footer .container {
-    flex-direction: column; /* Stack footer sections vertically */
+    flex-direction: row; /* Stack footer sections vertically */
     align-items: center;
   }
 
   footer .container > div {
-    width: 100%; /* Make each footer section take full width */
+    width: 50%; /* Make each footer section take full width */
     margin-bottom: 20px;
   }
 
@@ -356,15 +356,6 @@
   .picture-button img {
     width: 100%; /* Make images responsive */
   }
-
-  /* Adjust the digital clock position */
-  .clock-container {
-    top: auto;
-    bottom: 10px;
-    right: 50%;
-    transform: translateX(50%);
-  }
-}
 
 /* For extra small devices (phones) */
 @media screen and (max-width: 480px) {
