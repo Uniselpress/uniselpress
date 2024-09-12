@@ -322,7 +322,7 @@
   }
 
   .floating-menu li a {
-    padding: 10px 20px; /* Reduce padding */
+    padding: 10px 10px; /* Reduce padding */
   }
 
   /* Adjust book gallery for smaller screens */
@@ -353,9 +353,25 @@
     font-size: 14px; /* Smaller text on mobile */
   }
 
+  /* Full-width highlighted heading */
+    .full-width-heading {
+      background-color: orange; /* Background color */
+      color: black; /* Text color */
+      padding: 0px; /* Space inside the heading */
+      text-align: center; /* Center-align the text */
+      margin: 0; /* Remove default margin */
+      width: 98.7%; /* Full width */
+    }
+  
   .picture-button img {
     width: 100%; /* Make images responsive */
   }
+    /* Hide clock on mobile screens */
+@media only screen and (max-width: 768px) {
+  .clock-container {
+    display: none;
+  }
+}
 
 /* For extra small devices (phones) */
 @media screen and (max-width: 480px) {
