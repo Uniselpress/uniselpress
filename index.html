@@ -313,12 +313,13 @@
   
   /* Adjust logo size */
   .logo-container img {
-    width: 50%; /* Adjust logo size on mobile */
+    width: 100%; /* Adjust logo size on mobile */
   }
 
   /* Make the navigation menu horizontal */
   .floating-menu ul {
     flex-direction: row;
+    width: 50%;
   }
 
   .floating-menu li a {
@@ -357,15 +358,21 @@
     .full-width-heading {
       background-color: orange; /* Background color */
       color: black; /* Text color */
+      text-size-adjust: 50%;
       padding: 0px; /* Space inside the heading */
       text-align: center; /* Center-align the text */
       margin: 0; /* Remove default margin */
-      width: 98.7%; /* Full width */
+      width: 80%; /* Full width */
     }
   
   .picture-button img {
     width: 100%; /* Make images responsive */
   }
+
+  .customer-reviews .book img {
+  width: 100px; /* Increase the width */
+  height: auto; /* Maintain the aspect ratio */
+}
     /* Hide clock on mobile screens */
 @media only screen and (max-width: 768px) {
   .clock-container {
