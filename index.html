@@ -99,38 +99,6 @@
     }
 
 
-    /* Slideshow styles */
-    .slideshow-container {
-      max-width: 100%;
-      position: relative;
-      margin: auto;
-    }
-
-    .slide {
-      display: none;
-    }
-
-    .active-slide {
-      display: block;
-    }
-
-    .fade {
-      -webkit-animation-name: fade;
-      -webkit-animation-duration: 1.5s;
-      animation-name: fade;
-      animation-duration: 1.5s;
-    }
-
-    @-webkit-keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-
-    @keyframes fade {
-      from {opacity: .4} 
-      to {opacity: 1}
-    }
-
     /* Picture button styles */
     .picture-button {
       position: relative;
@@ -340,6 +308,83 @@
   height: auto; /* Maintain the aspect ratio */
 }
 
+/* For smaller screen devices */
+@media screen and (max-width: 768px) {
+  
+  /* Adjust logo size */
+  .logo-container img {
+    width: 50%; /* Adjust logo size on mobile */
+  }
+
+  /* Make the navigation menu vertical */
+  .floating-menu ul {
+    flex-direction: column;
+  }
+
+  .floating-menu li a {
+    padding: 10px 20px; /* Reduce padding */
+  }
+
+  /* Adjust book gallery for smaller screens */
+  .book-gallery {
+    flex-direction: column; /* Stack the books vertically on mobile */
+    align-items: center;
+  }
+
+  .book {
+    width: 80%; /* Reduce book size */
+    margin: 10px;
+  }
+
+  /* Footer styling for smaller devices */
+  footer .container {
+    flex-direction: column; /* Stack footer sections vertically */
+    align-items: center;
+  }
+
+  footer .container > div {
+    width: 100%; /* Make each footer section take full width */
+    margin-bottom: 20px;
+  }
+
+  /* Adjust text and button sizes */
+  .explore-button {
+    padding: 10px 15px;
+    font-size: 14px; /* Smaller text on mobile */
+  }
+
+  .picture-button img {
+    width: 100%; /* Make images responsive */
+  }
+
+  /* Adjust the digital clock position */
+  .clock-container {
+    top: auto;
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+}
+
+/* For extra small devices (phones) */
+@media screen and (max-width: 480px) {
+  
+  /* Make navigation menu more compact */
+  .floating-menu li a {
+    padding: 8px 10px;
+    font-size: 14px; /* Smaller text */
+  }
+
+  /* Adjust the book images to fit smaller screens */
+  .book img {
+    width: 150px; /* Reduce size further */
+  }
+
+  /* Director's message text adjustment */
+  .director-message p {
+    font-size: 1em; /* Slightly smaller text */
+  }
+}
   </style>
 </head>
 
@@ -358,35 +403,33 @@
         <div class="dropdown-content">
           <a href="aboutuniselpress.html">About Unisel Press</a>
           <a href="organizationalstructure.html">Organizational Structure</a>
-          <a href="staff.html">Staff</a>
           <a href="publicationcommittee.html">Publication Committee</a>
         </div>
-      <li><a href="manuscript.html" >MANUSCRIPT</a></li>
+      <li class="dropdown">
+        <a href="manuscript.html">MANUSCRIPT</a>
+        <div class="dropdown-content">
+          <a href="proposalguideline.html">Submission Guideline</a>
+          <a href="https://tinyurl.com/y63up7pc" target="_blank">Review Form</a>
+        </div>
       <li class="dropdown">
         <a href="publication.html" >PUBLICATION</a>
         <div class="dropdown-content">
-          <a href="journalpublication.html">Journal Publication</a>
-          <a href="listofpublication.html">List of Publication</a>
+          <a href="book.html">Books</a>
+          <a href="journal.html">Journals</a>
+          <a href="multimedia.html">Multimedia</a>
         </div>
       </li>
-      <li><a href="sales.html">SALES</a></li>
+      <li class="dropdown">
+        <a href="sales.html">SALES</a>
+        <div class="dropdown-content">
+          <a href="agents.html">Agents</a>
+        </div>
       <li><a href="contact.html">CONTACT</a></li>
     </ul>
   </div><br>
 
-  <!-- Slideshow -->
-  <div class="slideshow-container">
-    <div class="slide active-slide fade">
-      <img src="img/banner1.jpg" style="width:100%">
-    </div>
-    <div class="slide fade">
-      <img src="img/banner2.jpg" style="width:100%">
-    </div>
-    <div class="slide fade">
+  <div>
       <img src="img/banner3.jpg" style="width:100%">
-    </div>
-    <div class="slide fade">
-      <img src="img/banner4.jpg" style="width:100%">
     </div>
   </div>
 
@@ -473,9 +516,8 @@
         
         <div class="operation-hours">
             <p><strong>Contact Details</strong></p>
-            <p>Phone: +603-XXXXXXX<br>
+            <p>Phone: +603-55223411<br>
             Mobile: +6012-3393066<br>
-            Fax: +603-XXXXXXXXX<br>
             Email: <a href="mailto:sidin@unisel.edu.my">sidin@unisel.edu.my</a> (Director)<br>
             Email: <a href="mailto:uniselpress@gmail.com">uniselpress@gmail.com</a></p>
         </div>
@@ -504,20 +546,6 @@
 
 
   <script>
-    // Slideshow script
-    let slideIndex = 0;
-    showSlides();
-
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3000); // Change image every 3 seconds
-    }
 
     // Digital clock script
     function updateClock() {
