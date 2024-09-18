@@ -187,7 +187,7 @@
       margin-bottom: 20px;
     }
 
-      .publication-section h4 {
+      .publication-section  {
       color: black;
       border-bottom: 2px solid darkorange;
       padding-bottom: 10px;
@@ -214,6 +214,98 @@
     .publication-section .publication-item p {
       margin: px 0 0;
     }
+
+        /* Explore Journals Button */
+    .explore-button-container {
+      text-align: center; /* Center-align the button */
+      margin: 20px 0; /* Space above and below the button */
+    }
+
+    .explore-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: orange; /* Button background color */
+      color: black; /* Button text color */
+      text-decoration: none; /* Remove underline */
+      font-size: 16px; /* Font size */
+      font-weight: bold; /* Make text bold */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+      transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+    }
+
+    .explore-button:hover {
+      background-color: #ff4c4c; /* Darker shade on hover */
+      transform: scale(1.05); /* Slightly larger on hover */
+    }
+
+        /* Media Queries for Responsive Design */
+    @media only screen and (max-width: 768px) {
+      .content {
+        padding: 10px;
+        max-width: 100%;
+      }
+
+      .content h2 {
+        font-size: 20px;
+      }
+
+      .content p {
+        font-size: 14px;
+      }
+
+      .floating-menu li a {
+        padding: 10px 10px; /* Reduce padding on mobile */
+      }
+
+      .clock-container {
+        display: none; /* Hide the clock on mobile devices */
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 11px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+
+      /* For extra small devices (phones) */
+    @media screen and (max-width: 480px) {
+      
+      /* Make navigation menu more compact */
+      .floating-menu li a {
+        padding: 10px 4px;
+        font-size: 12px; /* Smaller text */
+      }
+
+      /* Adjust the book images to fit smaller screens */
+      .book img {
+        width: 100px; /* Reduce size further */
+      }
+
+      /* Adjust logo size */
+      .logo-container img {
+        width: 100%; /* Adjust logo size on mobile */
+        padding: 80px;
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 10px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 
@@ -232,18 +324,27 @@
         <div class="dropdown-content">
           <a href="aboutuniselpress.html">About Unisel Press</a>
           <a href="organizationalstructure.html">Organizational Structure</a>
-          <a href="staff.html">Staff</a>
           <a href="publicationcommittee.html">Publication Committee</a>
         </div>
-      <li><a href="manuscript.html" >MANUSCRIPT</a></li>
+      <li class="dropdown">
+        <a href="manuscript.html">MANUSCRIPT</a>
+        <div class="dropdown-content">
+          <a href="proposalguideline.html">Submission Guideline</a>
+          <a href="https://tinyurl.com/y63up7pc" target="_blank">Review Form</a>
+        </div>
       <li class="dropdown">
         <a href="publication.html" class="active">PUBLICATION</a>
         <div class="dropdown-content">
-          <a href="journalpublication.html">Journal Publication</a>
-          <a href="listofpublication.html">List of Publication</a>
+          <a href="book.html">Books</a>
+          <a href="journal.html">Journals</a>
+          <a href="multimedia.html">Multimedia</a>
         </div>
       </li>
-      <li><a href="sales.html">SALES</a></li>
+      <li class="dropdown">
+        <a href="sales.html">SALES</a>
+        <div class="dropdown-content">
+          <a href="agents.html">Agents</a>
+        </div>
       <li><a href="contact.html">CONTACT</a></li>
     </ul>
   </div>
@@ -254,11 +355,12 @@
   <h2 style="margin-bottom: 10px;">Our Publications</h2>
   <b><i style="margin-top: 0; display: block;">Penerbitan Kami</i></b>
 </div>
-    <div class="description" style="max-width: 60%; margin: auto; text-align: center;">
-  <p>Unisel Press specializes in the publication of academic journals and books. Our journals are available for free access, facilitating widespread dissemination of research findings. In contrast, books published by Unisel Press can be purchased through Shopee. We are committed to advancing knowledge and supporting academic communities by offering high-quality scholarly publications.</p>
-  <p><i>Unisel Press pakar dalam penerbitan jurnal akademik dan buku. Jurnal kami boleh diakses secara percuma, memudahkan penyebaran hasil penyelidikan secara meluas. Sebaliknya, buku yang diterbitkan oleh Unisel Press boleh dibeli melalui Shopee. Kami berdedikasi untuk memajukan ilmu pengetahuan dan menyokong komuniti akademik dengan menyediakan penerbitan ilmiah berkualiti tinggi.</i></p>
-  <div>
-    <center><img src="img/banner3.jpg" style="width:100%"></center><br>
+
+<!-- Explore Journals Button -->
+<div class="explore-button-container">
+  <a href="https://shopee.com.my/uniselpress?entryPoint=ShopBySearch&searchKeyword=unisel%20press" target="_blank" class="explore-button">BUY NOW / BELI SEKARANG</a>
+</div>
+    <center><img src="img/banner3.jpg" style="width:80%"></center><br>
   </div>
 </div>
 
@@ -278,9 +380,8 @@
         
         <div class="operation-hours">
             <p><strong>Contact Details</strong></p>
-            <p>Phone: +603-XXXXXXX<br>
+            <p>Phone: +603-55223411<br>
             Mobile: +6012-3393066<br>
-            Fax: +603-XXXXXXXXX<br>
             Email: <a href="mailto:sidin@unisel.edu.my">sidin@unisel.edu.my</a> (Director)<br>
             Email: <a href="mailto:uniselpress@gmail.com">uniselpress@gmail.com</a></p>
         </div>
