@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/icon.jpg" type="image/jpg">
-  <title>UNISEL PRESS: Publication</title>
+  <title>UNISEL PRESS: Multimedia</title>
   <style>
     /* Reset margin and padding for body and html to avoid unexpected spaces */
     html, body {
@@ -213,6 +213,134 @@
 
     .publication-section .publication-item p {
       margin: px 0 0;
+    }
+
+        /* Media Queries for Responsive Design */
+    @media only screen and (max-width: 768px) {
+      .content {
+        padding: 10px;
+        max-width: 100%;
+      }
+
+      .content h2 {
+        font-size: 20px;
+      }
+
+      .content p {
+        font-size: 14px;
+      }
+
+      .floating-menu li a {
+        padding: 10px 10px; /* Reduce padding on mobile */
+      }
+
+      .books-container {
+      width: 100%;
+      }
+
+      .book-item {
+      font-size: 12px;
+    }
+
+    .book-item img {
+      width: 60%; /* Increase the width */
+      height: auto;
+    }
+
+    .book-description {
+      font-size: 12px;
+    }
+
+    .book-title {
+      font-size: 16px;
+    }
+
+    .editor-info {
+      font-size: 12px;
+    }
+
+    .pdf-button {
+      padding: 10px 15px;
+      font-size: 12px;
+    }
+
+      .clock-container {
+        display: none; /* Hide the clock on mobile devices */
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 11px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+
+      /* For extra small devices (phones) */
+    @media screen and (max-width: 480px) {
+      
+      /* Make navigation menu more compact */
+      .floating-menu li a {
+        padding: 10px 4px;
+        font-size: 12px; /* Smaller text */
+      }
+
+      /* Adjust the book images to fit smaller screens */
+      .book img {
+        width: 100px; /* Reduce size further */
+      }
+
+      /* Adjust logo size */
+      .logo-container img {
+        width: 100%; /* Adjust logo size on mobile */
+        padding: 80px;
+      }
+
+      .books-container {
+      width: 100%;
+      }
+
+      .book-item {
+      font-size: 12px;
+      }
+
+      .book-item img {
+        width: 60%; /* Increase the width */
+        height: auto;
+      }
+
+      .book-description {
+        font-size: 12px;
+      }
+
+      .book-title {
+        font-size: 16px;
+      }
+
+      .editor-info {
+        font-size: 12px;
+      }
+
+      .pdf-button {
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 10px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
     }
   </style>
 </head>
