@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="img/icon.jpg" type="image/jpg">
   <title>UNISEL PRESS: About Unisel Press</title>
   <style>
@@ -26,26 +27,26 @@
       box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a slight shadow for depth */
     }
 
-    /* Adjust the styling of the menu items */
     .floating-menu ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center; /* Center the menu items */
+      flex-wrap: wrap; /* Ensure the menu wraps on smaller screens */
     }
 
     .floating-menu li {
-      margin: 0; /* Remove any margin between list items */
+      margin: 0;
     }
 
     .floating-menu li a {
       display: block;
       color: darkorange;
       text-align: center;
-      padding: 10px 40px; /* Reduce padding to bring menu items closer */
+      padding: 10px 40px;
       text-decoration: none;
-      white-space: nowrap; /* Prevent text from wrapping */
+      white-space: nowrap;
     }
 
     .floating-menu li a:hover {
@@ -117,129 +118,103 @@
       color: darkorange;
       font-size: 18px;
       text-align: center;
-      z-index: 1000; /* Ensure the clock is on top */
-      background-color: #fff; /* Background color for better visibility */
-      padding: 10px; /* Padding for better visibility */
-      border-radius: 5px; /* Rounded corners */
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      z-index: 1000;
+      background-color: #fff;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
       font-family: Arial, sans-serif;
     }
-    
+
     footer {
-        width: 100%;
-        background-color: orange;
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
-        font-family: Arial, sans-serif; /* Set font to Arial */
+      width: 100%;
+      background-color: orange;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
 
     footer .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start; /* Align items at the start of the flex container */
-        flex-wrap: wrap; /* Allow content to wrap if necessary */
-        width: 100%; /* Ensure the container spans full width */
-        max-width: 1200px;
-        margin: 0 auto; /* Center the content within the container */
-        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      box-sizing: border-box;
     }
 
     footer .container > div {
-        display: flex;
-        flex-direction: column;
-        align-items: center; /* Center-align items in the column */
-        margin: 10px; /* Add margin for spacing */
-        text-align: center; /* Center-align text in all sections */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+      text-align: center;
     }
 
     footer .container .contact-info,
     footer .container .operation-hours,
     footer .container .social-media {
-        flex: 1; /* Allow sections to grow equally */
-    }
-
-    footer .container .contact-info,
-    footer .container .operation-hours {
-        margin-right: 20px; /* Space between sections */
+      flex: 1;
     }
 
     footer .container .social-media {
-    display: inline-block;
-    flex-direction: row; /* Align items vertically */
-    align-items: center; /* Center align icons horizontally */
-    gap: 10px; /* Space between social media icons */
+      display: inline-block;
+      flex-direction: row;
+      align-items: center;
+      gap: 10px;
     }
 
     footer .container .social-media a {
-        margin: 0; /* Remove horizontal margin */
-        text-decoration: none;
+      margin: 0;
+      text-decoration: none;
     }
 
     footer .container .social-media img {
-        width: 35px; /* Set a consistent size for social media icons */
-        height: 35px;
+      width: 35px;
+      height: 35px;
     }
 
     footer .container .copyright {
-        width: 100%;
-        text-align: center; /* Center-align text in the copyright section */
-        font-size: 14px;
-        color: black;
-        margin-top: 20px; /* Add space above the copyright section */
+      width: 100%;
+      text-align: center;
+      font-size: 14px;
+      color: black;
+      margin-top: 20px;
     }
 
-        /* Media queries for responsiveness */
-    @media (max-width: 768px) {
-      
-
-      /* Adjust logo size */
-      .logo-container img {
-        width: 100%; /* Adjust logo size on mobile */
-        padding: 50px;
-      }
-
-      /* Make navigation menu more compact on mobile */
-      .floating-menu ul {
-        flex-direction: row;
-      }
-
-      .floating-menu li a {
-        padding: 10px 10px;
-      }
-
-      /* Make the content fit on smaller screens */
-      .content {
-        padding: 15px;
-        font-size: 14px;
-      }
-
-      /* Hide clock on mobile screens */
+    /* Media Queries for Responsive Design */
     @media only screen and (max-width: 768px) {
-      .clock-container {
-        display: none;
+      .content {
+        padding: 10px;
+        max-width: 100%;
       }
-    }
 
-    @media (max-width: 480px) {
+      .content h2 {
+        font-size: 20px;
+      }
 
-      /* Make navigation menu more compact */
+      .content p {
+        font-size: 14px;
+      }
+
       .floating-menu li a {
-        padding: 10px 4px;
-        font-size: 12px; /* Smaller text */
+        padding: 10px 20px; /* Reduce padding on mobile */
       }
 
-      /* Footer styling for smaller devices */
-      footer .container {
-        flex-direction: row; /* Stack footer sections vertically */
-        align-items: center;
-        font-size: 10px;
+      .clock-container {
+        display: none; /* Hide the clock on mobile devices */
       }
 
       footer .container > div {
-        width: 50%; /* Make each footer section take full width */
-        margin-bottom: 20px;
+        margin: 5px;
+      }
+
+      footer .container .social-media img {
+        width: 30px;
+        height: 30px;
       }
     }
-
   </style>
 </head>
 
@@ -266,7 +241,7 @@
           <a href="https://tinyurl.com/y63up7pc" target="_blank">Review Form</a>
         </div>
       <li class="dropdown">
-        <a href="publication.html" >PUBLICATION</a>
+        <a href="publication.html">PUBLICATION</a>
         <div class="dropdown-content">
           <a href="book.html">Books</a>
           <a href="journal.html">Journals</a>
@@ -318,6 +293,7 @@
 
     <br><br>
   </div>
+  </div>
 
   <div class="clock-container" id="digital-clock"></div>
 
@@ -329,7 +305,7 @@
       var day = days[now.getDay()];
 
       var date = now.getDate().toString().padStart(2, '0');
-      var month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-indexed
+      var month = (now.getMonth() + 1).toString().padStart(2, '0');
       var year = now.getFullYear();
 
       var hours = now.getHours().toString().padStart(2, '0');
@@ -342,8 +318,8 @@
       document.getElementById('digital-clock').textContent = dateString + ' ' + timeString;
     }
 
-    setInterval(updateClock, 1000); // Update every second
-    updateClock(); // Initial call to display the clock immediately
+    setInterval(updateClock, 1000);
+    updateClock();
   </script>
 
   <!-- Footer -->
