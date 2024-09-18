@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/icon.jpg" type="image/jpg">
+  <title>UNISEL PRESS: List of Publication</title>
+  <style>
+    /* Reset margin and padding for body and html to avoid unexpected spaces */
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Logo container styling to center the logo */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0px;
+    }
+
+    /* Floating menu styling */
+    .floating-menu {
+      position: fixed;
+      font-family: Arial;
+      top: 0;
+      left: 0;
+      width: 100%; /* Make the menu take the full width of the page */
+      z-index: 1;
+      text-align: center;
+      background-color: #fff; /* White background */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a slight shadow for depth */
+    }
+
+    /* Adjust the styling of the menu items */
+    .floating-menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center; /* Center the menu items */
+    }
+
+    .floating-menu li {
+      margin: 0; /* Remove any margin between list items */
+    }
+
+    .floating-menu li a {
+      display: block;
+      color: darkorange;
+      text-align: center;
+      padding: 10px 40px; /* Reduce padding to bring menu items closer */
+      text-decoration: none;
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+
+    .floating-menu li a:hover {
+      background-color: #FFD366;
+    }
+
+    .floating-menu a.active {
+      background-color: #FFA966;
+      color: #800000;
+    }
+
+    .floating-menu li.dropdown {
+      display: inline-block;
+    }
+
+    .floating-menu .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .floating-menu .dropdown-content a {
+      color: darkorange;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    .floating-menu .dropdown-content a:hover {
+      background-color: #FFD366;
+    }
+
+    .floating-menu .dropdown-content a.active {
+      background-color: #FFA966;
+      color: #800000;
+    }
+
+    .floating-menu .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .books-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 0px;
+    }
+
+    .book-item {
+      display: flex; /* Use flexbox for layout */
+      align-items: flex-start; /* Align items to the start of the container */
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 10px;
+      padding: 10px;
+      width: 600px; /* Adjust width as needed */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .book-item img {
+      width: 200px; /* Set a fixed width for the image */
+      height: auto;
+      border-radius: 10px;
+      margin-right: 20px; /* Space between image and text */
+    }
+
+    .book-description {
+      flex: 1; /* Take up remaining space */
+    }
+
+    .book-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 10px;
+      font-family: Arial;
+    }
+
+    .editor-info {
+      font-size: 14px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      text-align: justify;
+      font-family: Arial;
+    }
+
+    .pdf-button {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: orange;
+      color: black;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      font-family: Arial;
+
+    }
+
+    .pdf-button:hover {
+      background-color: #cc4646;
+    }
+    /* Digital clock styles */
+    .clock-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      color: darkorange;
+      font-size: 18px;
+      text-align: center;
+      z-index: 1000; /* Ensure the clock is on top */
+      background-color: #fff; /* Background color for better visibility */
+      padding: 10px; /* Padding for better visibility */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      font-family: Arial, sans-serif;
+    }
+
+    footer {
+        width: 100%;
+        background-color: orange;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        font-family: Arial, sans-serif; /* Set font to Arial */
+    }
+
+    footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; /* Align items at the start of the flex container */
+        flex-wrap: wrap; /* Allow content to wrap if necessary */
+        width: 100%; /* Ensure the container spans full width */
+        max-width: 1200px;
+        margin: 0 auto; /* Center the content within the container */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    footer .container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-align items in the column */
+        margin: 10px; /* Add margin for spacing */
+        text-align: center; /* Center-align text in all sections */
+    }
+
+    footer .container .contact-info,
+    footer .container .operation-hours,
+    footer .container .social-media {
+        flex: 1; /* Allow sections to grow equally */
+    }
+
+    footer .container .contact-info,
+    footer .container .operation-hours {
+        margin-right: 20px; /* Space between sections */
+    }
+
+    footer .container .social-media {
+    display: inline-block;
+    flex-direction: row; /* Align items vertically */
+    align-items: center; /* Center align icons horizontally */
+    gap: 10px; /* Space between social media icons */
+    }
+
+    footer .container .social-media a {
+        margin: 0; /* Remove horizontal margin */
+        text-decoration: none;
+    }
+
+    footer .container .social-media img {
+        width: 35px; /* Set a consistent size for social media icons */
+        height: 35px;
+    }
+
+    footer .container .copyright {
+        width: 100%;
+        text-align: center; /* Center-align text in the copyright section */
+        font-size: 14px;
+        color: black;
+        margin-top: 20px; /* Add space above the copyright section */
+    }
+
+        /* Media Queries for Responsive Design */
+    @media only screen and (max-width: 768px) {
+      .content {
+        padding: 10px;
+        max-width: 100%;
+      }
+
+      .content h2 {
+        font-size: 20px;
+      }
+
+      .content p {
+        font-size: 14px;
+      }
+
+      .floating-menu li a {
+        padding: 10px 10px; /* Reduce padding on mobile */
+      }
+
+      .clock-container {
+        display: none; /* Hide the clock on mobile devices */
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 11px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+
+      /* For extra small devices (phones) */
+    @media screen and (max-width: 480px) {
+      
+      /* Make navigation menu more compact */
+      .floating-menu li a {
+        padding: 10px 4px;
+        font-size: 12px; /* Smaller text */
+      }
+
+      /* Adjust the book images to fit smaller screens */
+      .book img {
+        width: 100px; /* Reduce size further */
+      }
+
+      /* Adjust logo size */
+      .logo-container img {
+        width: 100%; /* Adjust logo size on mobile */
+        padding: 80px;
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 10px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Logo -->
+  <div align="center">
+    <br><br><br><img src="img/logo.jpg" width="15%"><br><br>
+  </div>
+
+  <!-- Navigation Menu -->
+  <div class="floating-menu">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="dropdown">
+        <a href="aboutuniselpress.html">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="aboutuniselpress.html">About Unisel Press</a>
+          <a href="organizationalstructure.html">Organizational Structure</a>
+          <a href="publicationcommittee.html">Publication Committee</a>
+        </div>
+      <li class="dropdown">
+        <a href="manuscript.html">MANUSCRIPT</a>
+        <div class="dropdown-content">
+          <a href="proposalguideline.html">Submission Guideline</a>
+          <a href="https://tinyurl.com/y63up7pc" target="_blank">Review Form</a>
+        </div>
+      <li class="dropdown">
+        <a href="publication.html" class="active">PUBLICATION</a>
+        <div class="dropdown-content">
+          <a href="book.html" class="active">Books</a>
+          <a href="journal.html">Journals</a>
+          <a href="multimedia.html">Multimedia</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="sales.html">SALES</a>
+        <div class="dropdown-content">
+          <a href="agents.html">Agents</a>
+        </div>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <!-- Books Container -->
+<div style="text-align: center; font-family: Arial;">
+  <h2 style="margin-bottom: 10px;">Books</h2>
+  <b><i style="margin-top: 0; display: block;">Buku-buku</i></b>
+</div>
+    <div class="books-container">
+      <div class="book-item">
+        <img src="img/profel.jpg" alt="Journal 1">
+        <div class="book-description">
+          <div class="book-title">Profesionalisme Dalam Tadbir Urus Masjid</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Dr. Ahmad Zaki bin Haji Abdul Latiff</p>
+            <p>Year/<i>Tahun</i> : <br> 2021</p>
+            <p>Summary/<i>Ringkasan</i>:<br>Masjid bukan sahaja tempat ibadah, tetapi juga pusat kebudayaan dan penyebaran ilmu dalam Islam. Sejarah menunjukkan bahawa masjid pertama yang dibina oleh Rasulullah SAW selepas Hijrah ialah Masjid Quba’, menandakan kepentingan masjid sebagai simbol penyatuan umat Islam. Oleh itu, masjid perlu ditadbir secara profesional untuk memastikan pengurusan yang bersistematik dan teratur, serta menarik lebih ramai orang untuk memakmurkan masjid.</p>
+            <p><i>Masjid adalah tempat ibadah, pusat kebudayaan, dan penyebaran ilmu bagi umat Islam. Sejarah menunjukkan pentingnya masjid, seperti Masjid Quba’ yang dibina oleh Rasulullah SAW selepas Hijrah, menjadi simbol penyatuan umat Islam. Oleh itu, pengurusan masjid perlu dilakukan secara profesional untuk memastikan ia berkembang secara sistematik dan teratur, menarik lebih ramai orang untuk memakmurkannya.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Profesionalisme-Dalam-Tadbir-Urus-Masjid-i.518611768.10246897873?sp_atk=0f693809-3eec-4711-848e-82a10f6ddf15" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/himpunan.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Himpunan Kesalahan Penggunaan Bahasa Arab Dalam Kalangan Pelajar Malaysia</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Dr. Muhammad bin Daoh</p>
+            <p>Year/<i>Tahun</i> : <br> 2020</p>
+            <p>Summary/<i>Ringkasan</i>:<br>An effective approach to mastering a language is by understanding and identifying mistakes in its usage. This book helps students improve their Arabic language skills by compiling realistic errors commonly made by university students in Malaysia, particularly in the Klang Valley. The shortage of Arabic reference books in the market makes this book essential for those who wish to deepen their understanding of Arabic.</p>
+            <p><i>Pendekatan berkesan untuk menguasai bahasa adalah dengan memahami dan mengenal pasti kesalahan dalam penggunaannya. Buku ini membantu pelajar memperbaiki penguasaan bahasa Arab dengan mengumpulkan kesalahan realistik yang sering dilakukan oleh pelajar IPT di Malaysia, khususnya di Lembah Klang. Kekurangan buku rujukan bahasa Arab di pasaran menjadikan buku ini penting untuk dimiliki oleh mereka yang ingin mendalami bahasa Arab.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Himpunan-Kesalahan-Penggunaan-Bahasa-Arab-Dalam-Kalangan-Pelajar-Malaysia-i.518611768.11046889815" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/development.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Development of Social and Environmental Accounting and Practices</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Norhayah Zulkifli, Dalilawati Zainal & Norsyahida Mokhtar</p>
+            <p>Year/<i>Tahun</i> : <br> 2022</p>
+            <p>Summary/<i>Ringkasan</i>:<br>This book addresses the importance of accounting to assume greater responsibility to society and the environment. it provides eight chapters covering presentations and discussions on the fundamental concept of social and environmental accounting, its evolution, as well as social and environmental issues related to business practices and operation</p>
+              <p><i>Buku ini membincangkan kepentingan perakaunan untuk memikul tanggungjawab yang lebih besar kepada masyarakat dan persekitarannya. Ia menyediakan lapan bab yang meliputi pembentangan dan perbincangan mengenai konsep asas perakaunan sosial dan alam sekitar, evolusi, serta isu sosial dan persekitaran yang berkaitan dengan amalan dan operasi perniagaan.</i> </p>
+          </div>
+          <a href="https://shopee.com.my/Development-of-Social-and-Environmental-Accounting-and-Practices-i.518611768.15145038159?xptdk=09a81296-1267-48b1-aae3-f61044bef33d" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/pemimpinseribu.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Pemimpin Seribu Wajah: Himpunan Ceritera Mengenang Siddiq Fadzil</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Hasri Harun</p>
+            <p>Year/<i>Tahun</i> : <br> 2022</p>
+            <p>Summary/<i>Ringkasan</i>:<br>"Pemimpin Seribu Wajah" depicts the struggles and personality of the late Professor Dato’ Dr. Siddiq Fadzil through stories from his friends, acquaintances, and students. The book showcases his thoughts, contributions, and personal moments, making him an enduring inspiration for future generations.</p>
+            <p><i>"Pemimpin Seribu Wajah" menggambarkan perjuangan dan keperibadian Almarhum Profesor Dato’ Dr. Siddiq Fadzil melalui kisah-kisah dari sahabat, kenalan, dan murid-muridnya. Buku ini menampilkan pemikiran, sumbangan, dan momen-momen personal beliau, menjadikannya inspirasi yang terus hidup bagi generasi akan datang.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Pemimpin-Seribu-Wajah-Himpunan-Ceritera-Mengenang-Siddiq-Fadzil-i.518611768.15359066402?xptdk=bb0c463f-2ada-43e5-a44d-1d9c84d8c629" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/politikoposisi.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Politik Oposisi</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Hamdan Mohd Salleh</p>
+            <p>Year/<i>Tahun</i> : <br> 2023</p>
+            <p>Summary/<i>Ringkasan</i>:<br>"Naskhah Politik Oposisi" is a summary of Dr. Hamdan Mohd. Salleh's PhD thesis on the development of Parti Keadilan Rakyat (KEADILAN) as an opposition party in Malaysia. The book examines the role of opposition politics, which has often been considered sensitive, but has changed after the 2018 and 2022 general elections, highlighting them as a balancing force and alternative power in Malaysia's democratic system.</p>
+            <p><i>"Naskhah Politik Oposisi" adalah ringkasan tesis PhD Dr. Hamdan Mohd. Salleh mengenai perkembangan Parti Keadilan Rakyat (KEADILAN) sebagai parti oposisi di Malaysia. Buku ini mengkaji peranan politik oposisi yang sering dianggap sensitif tetapi telah berubah selepas PRU 2018 dan PRU 2022, menunjukkan mereka sebagai pengimbang dan kuasa alternatif dalam sistem demokrasi Malaysia.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Politik-Oposisi-Hamdan-Mohd-Salleh-i.518611768.24213429001?sp_atk=c4597a8c-8a43-40c9-b1e6-4df99d07b82f&xptdk=c4597a8c-8a43-40c9-b1e6-4df99d07b82f" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/visualminda.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Visual Minda: Asas Mereka Bentuk Kreativiti Grafik</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>En. Muhammad Nazir bin Mohammed Khalid & En. Sahrul Izwan bin Sarwadi</p>
+            <p>Year/<i>Tahun</i> : <br> 2021</p>
+            <p>Summary/<i>Ringkasan</i>:<br>"Visual Minda" is a basic drawing exercise book that aids students in improving hand coordination and skills in two and three-dimensional drawing. It emphasizes repetitive practice to understand visual drawing concepts, especially for STEM students, and provides a straightforward guide and exercises for techniques such as Geometric, Orthographic, Isometric, Projection, Coordinate Lines, Shadow Perspective, and Graphic Patterns.</p>
+            <p><i>"Visual Minda" is a basic drawing exercise book that helps students improve hand coordination and skills in two and three-dimensional drawing. It emphasizes repetitive practice to grasp visual drawing concepts, particularly for STEM students, and offers a simple guide and exercises for techniques such as Geometric, Orthographic, Isometric, Projection, Coordinate Lines, Shadow Perspective, and Graphic Patterns.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Visual-Minda-Asas-Mereka-Bentuk-Kreativiti-Grafik-i.518611768.10946898730?sp_atk=0d8862e0-4ba4-497d-88b4-cc5d0ca8f1ed" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/islamicfinance.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Islamic finance: The Shari'ah compliant derivatives</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Zaharuddin Abd. Rahman</p>
+            <p>Year/<i>Tahun</i> : <br> 2024</p>
+            <p>Summary/<i>Ringkasan</i>:<br>Derivatives are new names for trusted risk management instruments. They involve any transactions where there is no principal movement and prices are driven by an underlying commodity or asset. The underlying asset itself does not need to be bought or sold. It determines the promised derivative payment and can be anything deemed useful by the contracting parties. However, it may be unsuitable under Islamic finance.</p>
+            <p><i>Derivatif adalah instrumen pengurusan risiko yang tidak melibatkan pergerakan prinsipal dan harga bergantung pada aset asas tanpa perlu membeli atau menjual aset tersebut. Walaupun ia menentukan pembayaran derivatif, ia mungkin tidak sesuai dalam kewangan Islam.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Islamic-finance-The-Shari'ah-compliant-derivatives-i.518611768.24210598665?sp_atk=22c13480-a929-4cd5-93a8-3f5f25490f7c" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/smart.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Smart al-Fatihah: Penggunaan Makna Surah al-Fatihah Melalui Teknik Permainan Bahasa</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>En. Muhammad Nazir bin Mohammed Khalid</p>
+            <p>Year/<i>Tahun</i> : <br> 2020</p>
+            <p>Summary/<i>Ringkasan</i>:<br>"Smart al-Fatihah" is a book that offers interactive exercises to master the Arabic vocabulary of Surah al-Fatihah. It includes various language games to enhance Higher Order Thinking Skills (HOTS), providing valuable language practice and making learning more engaging. The activities are designed to be simple, relaxed, enjoyable, and flexible, improving memory, focus, quick response, flexibility, and problem-solving skills.</p>
+            <p><i>"Smart al-Fatihah" is a book that provides interactive exercises to master the Arabic vocabulary of Surah al-Fatihah. It uses various language games to enhance Higher Order Thinking Skills (HOTS), making language practice engaging and effective for both adults and children. The activities are designed to be easy, enjoyable, and flexible, helping to improve memory, focus, quick response, flexibility, and problem-solving skills.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Smart-al-Fatihah-Penggunaan-Makna-Surah-al-Fatihah-Melalui-Teknik-Permainan-Bahasa-i.518611768.12406427980?xptdk=1cde3aa9-550a-4dce-adcb-a12a2c215d59" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/maqasid.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Maqasid al-Shari'ah dalam Ranah Demokrasi</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Siddiq Fadzil</p>
+            <p>Year/<i>Tahun</i> : <br> 2021</p>
+            <p>Summary/<i>Ringkasan</i>:<br>This book is a compilation of articles by the late Prof. Dato' Dr. Siddiq Fadzil on his views regarding the democratic system in Malaysia and how the application of maqasid al-shari'ah can strengthen democratic leadership in such a governance system. It covers a wide range of topics related to political philosophy and maqasid, which the author studied throughout his involvement in Malaysian politics.</p>
+            <p><i>Buku ini adalah kompilasi artikel oleh Almarhum Prof. Dato' Dr. Siddiq Fadzil mengenai pandangan beliau tentang sistem demokrasi di Malaysia dan aplikasi ilmu maqasid al-syari'ah dalam mengukuhkan kepimpinan demokratik. Ia mencakup tajuk-tajuk luas yang berkaitan dengan falsafah politik dan maqasid yang dipelajari penulis sepanjang keterlibatannya dalam politik Malaysia.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Maqasid-al-Shari'ah-dalam-Ranah-Demokrasi-i.518611768.15945087111" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/biblioterapi.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Biblioterapi: Konsep dan Aplikasi</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Md Sidin Ahmad Ishak</p>
+            <p>Year/<i>Tahun</i> : <br> 2022</p>
+            <p>Summary/<i>Ringkasan</i>:<br>This book introduces the concept of bibliotherapy and its applications in various contexts. It provides guidance on developmental bibliotherapy for personal growth and addressing life challenges, and clinical bibliotherapy as an intervention for emotional issues used by mental health professionals.</p>
+            <p><i>Buku ini memperkenalkan konsep biblioterapi dan aplikasinya dalam pelbagai konteks. Ia memberikan panduan tentang biblioterapi pembangunan untuk perkembangan peribadi dan menghadapi cabaran hidup, serta biblioterapi klinikal sebagai intervensi untuk masalah emosi oleh pakar kesihatan mental.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Biblioterapi-Konsep-dan-Aplikasi-i.518611768.12173374864?xptdk=5a2374f9-c2cd-4cc1-b9b4-9fdb37546193" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/adabsopan.jpg" alt="Book 2">
+        <div class="book-description">
+          <div class="book-title">Adab Sopan Penuntut Ilmu</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Dr. Ahmad Zaki bin Haji Abdul Latiff</p>
+            <p>Year/<i>Tahun</i> : <br> 2020</p>
+            <p>Summary/<i>Ringkasan</i>:<br>"Adab Sopan Penuntut Ilmu" compiles important etiquettes as guidance for students at all levels, from school to university. It aims to improve and practice proper behavior as students, and to restore the glory of the Malay people and Islam, which are rooted in noble ethics and manners.</p>
+            <p><i>Buku "Adab Sopan Penuntut Ilmu" mengumpulkan adab penting sebagai panduan kepada pelajar dari semua peringkat, baik sekolah mahupun universiti. Ia bertujuan untuk memperbaiki dan mengamalkan adab sebagai pelajar, mengembalikan kegemilangan bangsa Melayu dan agama Islam yang berlandaskan akhlak dan adab mulia.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Adab-Sopan-Penuntut-Ilmu-i.518611768.12306424257" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+
+      <div class="book-item">
+        <img src="img/shaykh.jpg" alt="Book 3">
+        <div class="book-description">
+          <div class="book-title">Shaykh Muhammad Abduh: Tokoh Gerakan Islah</div>
+          <div class="editor-info">
+            <p>Author/<i>Pengarang</i>: <br>Siddiq Fadzil</p>
+            <p>Year/<i>Tahun</i> : <br> 2023</p>
+            <p>Summary/<i>Ringkasan</i>:<br>"Shaykh Muhammad Abduh: Tokoh Gerakan Islah" is a manuscript derived from the thesis written by the late Professor Dato' Dr. Siddiq Fadzil for his Master’s degree at the Institute of Language, Literature, and Malay Culture at Universiti Kebangsaan Malaysia in 1977/1978. This work provides a critical review and assessment of Shaykh Muhammad Abduh's thought, highlighting his role as a key figure involved in the intellectual clash between Islam and the West.</p>
+            <p><i>"Shaykh Muhammad Abduh: Tokoh Gerakan Islah" adalah naskhah daripada tesis Almarhum Profesor Dato' Dr. Siddiq Fadzil untuk Ijazah Sarjana di Universiti Kebangsaan Malaysia pada tahun 1977/1978. Penulisan ini mengkaji secara kritis pemikiran Shaykh Muhammad Abduh sebagai tokoh yang terlibat dalam pertentangan pemikiran Islam-Barat.</i></p>
+          </div>
+          <a href="https://shopee.com.my/Shaykh-Muhammad-Abduh-Tokoh-Gerakan-Islah-i.518611768.24713436173?sp_atk=1b45b58b-06b8-490b-ab77-9f7391d09044&xptdk=1b45b58b-06b8-490b-ab77-9f7391d09044" class="pdf-button" target="_blank">Get This Book Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="contact-info">
+            <p><strong>Mailing Address</strong></p>
+            <p>Penerbit Unisel<br>
+            Jalan Zirkon A7/A Seksyen 7<br>
+            40000 Shah Alam, Selangor<br>
+            Malaysia.</p>
+        </div>
+        
+        <div class="operation-hours">
+            <p><strong>Contact Details</strong></p>
+            <p>Phone: +603-55223411<br>
+            Mobile: +6012-3393066<br>
+            Email: <a href="mailto:sidin@unisel.edu.my">sidin@unisel.edu.my</a> (Director)<br>
+            Email: <a href="mailto:uniselpress@gmail.com">uniselpress@gmail.com</a></p>
+        </div>
+
+        <div class="operation-hours">
+            <p><strong>Operation Hours</strong></p>
+            <p>Monday - Friday: 08:30 - 17:30<br>
+            Saturday & Sunday: CLOSED<br>
+            Public Holiday: CLOSED</p>
+        </div>
+
+        <div class="social-media">
+            <p><strong>Follow us:</strong></p>
+            <br><a href="https://www.facebook.com/p/UNISEL-LIBRARY-100057472239050/?locale=ms_MY" target="_blank"><img src="img/fb.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/unisel.library/?hl=en" target="_blank"><img src="img/ig.jpg" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@unisellibrary" target="_blank"><img src="img/tiktok.jpg" alt="TikTok"></a>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2024 Unisel Press</p>
+            <p>Best viewed using Google Chrome, Mozilla Firefox and Internet Explorer 9.0+ with a resolution of 1366x768 or higher</p>
+        </div>
+    </div>
+</footer>
+
+
+  <div class="clock-container" id="digital-clock"></div>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+
+      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var day = days[now.getDay()];
+
+      var date = now.getDate().toString().padStart(2, '0');
+      var month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-indexed
+      var year = now.getFullYear();
+
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+
+      var timeString = hours + ':' + minutes + ':' + seconds;
+      var dateString = day + ', ' + date + '/' + month + '/' + year;
+
+      document.getElementById('digital-clock').textContent = dateString + ' ' + timeString;
+    }
+
+    setInterval(updateClock, 1000); // Update every second
+    updateClock(); // Initial call to display the clock immediately
+  </script>
+</body>
+</html>

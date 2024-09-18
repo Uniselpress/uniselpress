@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="img/icon.jpg" type="image/jpg">
+  <title>UNISEL PRESS: Publication</title>
+  <style>
+    /* Reset margin and padding for body and html to avoid unexpected spaces */
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Logo container styling to center the logo */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 0px;
+    }
+
+    /* Floating menu styling */
+    .floating-menu {
+      position: fixed;
+      font-family: Arial;
+      top: 0;
+      left: 0;
+      width: 100%; /* Make the menu take the full width of the page */
+      z-index: 1;
+      text-align: center;
+      background-color: #fff; /* White background */
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: add a slight shadow for depth */
+    }
+
+    /* Adjust the styling of the menu items */
+    .floating-menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center; /* Center the menu items */
+    }
+
+    .floating-menu li {
+      margin: 0; /* Remove any margin between list items */
+    }
+
+    .floating-menu li a {
+      display: block;
+      color: darkorange;
+      text-align: center;
+      padding: 10px 40px; /* Reduce padding to bring menu items closer */
+      text-decoration: none;
+      white-space: nowrap; /* Prevent text from wrapping */
+    }
+
+    .floating-menu li a:hover {
+      background-color: #FFD366;
+    }
+
+    .floating-menu a.active {
+      background-color: #FFA966;
+      color: #800000;
+    }
+
+    .floating-menu li.dropdown {
+      display: inline-block;
+    }
+
+    .floating-menu .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .floating-menu .dropdown-content a {
+      color: darkorange;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: center;
+    }
+
+    .floating-menu .dropdown-content a:hover {
+      background-color: #FFD366;
+    }
+
+    .floating-menu .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    footer {
+        width: 100%;
+        background-color: orange;
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        font-family: Arial, sans-serif; /* Set font to Arial */
+    }
+
+    footer .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start; /* Align items at the start of the flex container */
+        flex-wrap: wrap; /* Allow content to wrap if necessary */
+        width: 100%; /* Ensure the container spans full width */
+        max-width: 1200px;
+        margin: 0 auto; /* Center the content within the container */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    footer .container > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center-align items in the column */
+        margin: 10px; /* Add margin for spacing */
+        text-align: center; /* Center-align text in all sections */
+    }
+
+    footer .container .contact-info,
+    footer .container .operation-hours,
+    footer .container .social-media {
+        flex: 1; /* Allow sections to grow equally */
+    }
+
+    footer .container .contact-info,
+    footer .container .operation-hours {
+        margin-right: 20px; /* Space between sections */
+    }
+
+    footer .container .social-media {
+    display: inline-block;
+    flex-direction: row; /* Align items vertically */
+    align-items: center; /* Center align icons horizontally */
+    gap: 10px; /* Space between social media icons */
+    }
+
+    footer .container .social-media a {
+        margin: 0; /* Remove horizontal margin */
+        text-decoration: none;
+    }
+
+    footer .container .social-media img {
+        width: 35px; /* Set a consistent size for social media icons */
+        height: 35px;
+    }
+
+    footer .container .copyright {
+        width: 100%;
+        text-align: center; /* Center-align text in the copyright section */
+        font-size: 14px;
+        color: black;
+        margin-top: 20px; /* Add space above the copyright section */
+    }
+    /* Digital clock styles */
+    .clock-container {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      color: darkorange;
+      font-size: 18px;
+      text-align: center;
+      z-index: 1000; /* Ensure the clock is on top */
+      background-color: #fff; /* Background color for better visibility */
+      padding: 10px; /* Padding for better visibility */
+      border-radius: 5px; /* Rounded corners */
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+      font-family: Arial, sans-serif;
+    }
+
+
+    /* Publication Section Styling */
+    .publication-section {
+      padding: 0px;
+      margin: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .publication-section h2 {
+      color: black;
+      padding-bottom: 0px;
+      margin-bottom: 20px;
+    }
+
+      .publication-section  {
+      color: black;
+      border-bottom: 2px solid darkorange;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .publication-section .description {
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    .publication-section .publication-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .publication-section .publication-item img {
+      max-width: 150px;
+      margin-right: 20px;
+      border-radius: 8px;
+    }
+
+    .publication-section .publication-item p {
+      margin: px 0 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Logo -->
+  <div align="center">
+    <br><br><br><img src="img/logo.jpg" width="15%"><br>
+  </div><br>
+
+  <!-- Navigation Menu -->
+  <div class="floating-menu">
+    <ul>
+      <li><a href="index.html">HOME</a></li>
+      <li class="dropdown">
+        <a href="aboutuniselpress.html">ABOUT</a>
+        <div class="dropdown-content">
+          <a href="aboutuniselpress.html">About Unisel Press</a>
+          <a href="organizationalstructure.html">Organizational Structure</a>
+          <a href="publicationcommittee.html">Publication Committee</a>
+        </div>
+      <li class="dropdown">
+        <a href="manuscript.html">MANUSCRIPT</a>
+        <div class="dropdown-content">
+          <a href="proposalguideline.html">Submission Guideline</a>
+          <a href="https://tinyurl.com/y63up7pc" target="_blank">Review Form</a>
+        </div>
+      <li class="dropdown">
+        <a href="publication.html" class="active">PUBLICATION</a>
+        <div class="dropdown-content">
+          <a href="book.html">Books</a>
+          <a href="journal.html">Journals</a>
+          <a href="multimedia.html"class="active">Multimedia</a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="sales.html">SALES</a>
+        <div class="dropdown-content">
+          <a href="agents.html">Agents</a>
+        </div>
+      <li><a href="contact.html">CONTACT</a></li>
+    </ul>
+  </div>
+
+  <!-- Publication Section -->
+  <div style="text-align: center; font-family: Arial;">
+  <h2 style="margin-bottom: 10px;">Multimedia</h2>
+  <b><i style="margin-top: 0; display: block;">Multimedia</i></b>
+</div><br>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="contact-info">
+            <p><strong>Mailing Address</strong></p>
+            <p>Penerbit Unisel<br>
+            Jalan Zirkon A7/A Seksyen 7<br>
+            40000 Shah Alam, Selangor<br>
+            Malaysia.</p>
+        </div>
+        
+        <div class="operation-hours">
+            <p><strong>Contact Details</strong></p>
+            <p>Phone: +603-55223411<br>
+            Mobile: +6012-3393066<br>
+            Email: <a href="mailto:sidin@unisel.edu.my">sidin@unisel.edu.my</a> (Director)<br>
+            Email: <a href="mailto:uniselpress@gmail.com">uniselpress@gmail.com</a></p>
+        </div>
+
+        <div class="operation-hours">
+            <p><strong>Operation Hours</strong></p>
+            <p>Monday - Friday: 08:30 - 17:30<br>
+            Saturday & Sunday: CLOSED<br>
+            Public Holiday: CLOSED</p>
+        </div>
+
+        <div class="social-media">
+            <p><strong>Follow us:</strong></p>
+            <br><a href="https://www.facebook.com/p/UNISEL-LIBRARY-100057472239050/?locale=ms_MY" target="_blank"><img src="img/fb.jpg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/unisel.library/?hl=en" target="_blank"><img src="img/ig.jpg" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@unisellibrary" target="_blank"><img src="img/tiktok.jpg" alt="TikTok"></a>
+        </div>
+
+        <div class="copyright">
+            <p>Copyright © 2024 Unisel Press</p>
+            <p>Best viewed using Google Chrome, Mozilla Firefox and Internet Explorer 9.0+ with a resolution of 1366x768 or higher</p>
+        </div>
+    </div>
+</footer>
+
+
+  <div class="clock-container" id="digital-clock"></div>
+
+  <script>
+    function updateClock() {
+      var now = new Date();
+
+      var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      var day = days[now.getDay()];
+
+      var date = now.getDate().toString().padStart(2, '0');
+      var month = (now.getMonth() + 1).toString().padStart(2, '0'); // Months are zero-indexed
+      var year = now.getFullYear();
+
+      var hours = now.getHours().toString().padStart(2, '0');
+      var minutes = now.getMinutes().toString().padStart(2, '0');
+      var seconds = now.getSeconds().toString().padStart(2, '0');
+
+      var timeString = hours + ':' + minutes + ':' + seconds;
+      var dateString = day + ', ' + date + '/' + month + '/' + year;
+
+      document.getElementById('digital-clock').textContent = dateString + ' ' + timeString;
+    }
+
+    setInterval(updateClock, 1000); // Update every second
+    updateClock(); // Initial call to display the clock immediately
+  </script>
+</body>
+</html>
