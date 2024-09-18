@@ -199,20 +199,55 @@
       }
 
       .floating-menu li a {
-        padding: 10px 20px; /* Reduce padding on mobile */
+        padding: 10px 10px; /* Reduce padding on mobile */
       }
 
       .clock-container {
         display: none; /* Hide the clock on mobile devices */
       }
 
-      footer .container > div {
-        margin: 5px;
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 11px;
       }
 
-      footer .container .social-media img {
-        width: 30px;
-        height: 30px;
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+
+      /* For extra small devices (phones) */
+    @media screen and (max-width: 480px) {
+      
+      /* Make navigation menu more compact */
+      .floating-menu li a {
+        padding: 10px 4px;
+        font-size: 12px; /* Smaller text */
+      }
+
+      /* Adjust the book images to fit smaller screens */
+      .book img {
+        width: 100px; /* Reduce size further */
+      }
+
+      /* Adjust logo size */
+      .logo-container img {
+        width: 100%; /* Adjust logo size on mobile */
+        padding: 80px;
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 10px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
       }
     }
   </style>
