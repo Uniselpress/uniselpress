@@ -195,6 +195,10 @@
       margin: 10px 0;
     }
 
+    .content img {
+      width: 60%;
+      height: auto;
+
     .highlight-link {
       color: red;
       text-decoration: none;
@@ -220,39 +224,14 @@
         font-size: 14px;
       }
 
+      .content img {
+        width: 100%;
+        height: auto;
+      }
+
       .floating-menu li a {
         padding: 10px 10px; /* Reduce padding on mobile */
       }
-
-      .books-container {
-      width: 100%;
-      }
-
-      .book-item {
-      font-size: 12px;
-    }
-
-    .book-item img {
-      width: 30%; /* Increase the width */
-      height: auto;
-    }
-
-    .book-description {
-      font-size: 12px;
-    }
-
-    .book-title {
-      font-size: 16px;
-    }
-
-    .editor-info {
-      font-size: 12px;
-    }
-
-    .pdf-button {
-      padding: 10px 15px;
-      font-size: 12px;
-    }
 
       .clock-container {
         display: none; /* Hide the clock on mobile devices */
@@ -279,45 +258,28 @@
         font-size: 12px; /* Smaller text */
       }
 
-      /* Adjust the book images to fit smaller screens */
-      .book img {
-        width: 100px; /* Reduce size further */
-      }
-
       /* Adjust logo size */
       .logo-container img {
         width: 100%; /* Adjust logo size on mobile */
         padding: 80px;
       }
 
-      .books-container {
-      width: 100%;
+      .content {
+        padding: 10px;
+        max-width: 100%;
       }
 
-      .book-item {
-      font-size: 12px;
+      .content h2 {
+        font-size: 20px;
       }
 
-      .book-item img {
-        width: 30%; /* Increase the width */
+      .content p {
+        font-size: 14px;
+      }
+
+      .content img {
+        width: 100%;
         height: auto;
-      }
-
-      .book-description {
-        font-size: 12px;
-      }
-
-      .book-title {
-        font-size: 16px;
-      }
-
-      .editor-info {
-        font-size: 12px;
-      }
-
-      .pdf-button {
-        padding: 10px 15px;
-        font-size: 12px;
       }
 
       /* Footer styling for smaller devices */
@@ -390,7 +352,7 @@
     <p>1. <b>Shopee.</b> Click <a href="https://shopee.com.my/uniselpress?entryPoint=ShopBySearch&searchKeyword=unisel%20press" class="highlight-link" target="_blank">Here</a> to buy our books. </p>
     <p>2. <b>Unisel Press Bookstore</b></p>
       <center><a href="https://maps.google.com/?q=unisel+shah+alam" target="_blank" style="text-align: center;">
-        <img src="img/map.jpg" alt="Google Maps Icon" style="width: 400px; height: auto;">
+        <img src="img/map.jpg" alt="Google Maps Icon">
       </a>
           <p>Unisel Press Bookstore,<br>
           Shah Alam Kampus,
