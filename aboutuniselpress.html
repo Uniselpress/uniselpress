@@ -187,57 +187,43 @@
         margin-top: 20px; /* Add space above the copyright section */
     }
 
+        /* Media queries for responsiveness */
+    @media (max-width: 768px) {
       
-      /* For smaller screen devices */
-    @media screen and (max-width: 768px) {
-      
+
       /* Adjust logo size */
       .logo-container img {
         width: 100%; /* Adjust logo size on mobile */
         padding: 50px;
       }
 
-      /* Make the navigation menu horizontal */
+      /* Make navigation menu more compact on mobile */
       .floating-menu ul {
         flex-direction: row;
       }
 
       .floating-menu li a {
-        padding: 10px 10px; /* Reduce padding */
+        padding: 10px 10px;
       }
 
-      /* Footer styling for smaller devices */
-      footer .container {
-        flex-direction: row; /* Stack footer sections vertically */
-        align-items: center;
-        font-size: 11px;
+      /* Make the content fit on smaller screens */
+      .content {
+        padding: 15px;
+        font-size: 14px;
       }
 
-      footer .container > div {
-        width: 50%; /* Make each footer section take full width */
-        margin-bottom: 20px;
-      }
-
-        /* Hide clock on mobile screens */
-    @media only screen and (max-width: 768px) {
+      /* Hide clock container on mobile */
       .clock-container {
         display: none;
       }
     }
 
-    /* For extra small devices (phones) */
-    @media screen and (max-width: 480px) {
-      
+    @media (max-width: 480px) {
+
       /* Make navigation menu more compact */
       .floating-menu li a {
         padding: 10px 4px;
         font-size: 12px; /* Smaller text */
-      }
-
-      /* Adjust logo size */
-      .logo-container img {
-        width: 100%; /* Adjust logo size on mobile */
-        padding: 80px;
       }
 
       /* Footer styling for smaller devices */
@@ -250,12 +236,6 @@
       footer .container > div {
         width: 50%; /* Make each footer section take full width */
         margin-bottom: 20px;
-      }
-
-      /* Adjust text and button sizes */
-      .explore-button {
-        padding: 10px 15px;
-        font-size: 14px; /* Smaller text on mobile */
       }
     }
 
