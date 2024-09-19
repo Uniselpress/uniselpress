@@ -302,6 +302,7 @@
         padding: 80px;
       }
 
+      /* Office location section for extra small devices */
       .office-location {
         flex-direction: column; /* Stack the elements vertically */
         align-items: center; /* Center-align the items */
@@ -309,11 +310,14 @@
 
       .office-location img {
         width: 100%; /* Make the images responsive */
-        margin: 0; /* Remove margin for images */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 15px; /* Add spacing between images */
       }
 
       .office-location a {
-        margin-bottom: 20px; /* Add space between map and barcode */
+        width: 100%; /* Ensure the map link takes full width */
+        padding: 10px; /* Add padding for better touch interaction */
+        margin-bottom: 20px; /* Add spacing below the map link */
       }
 
       /* Footer styling for smaller devices */
