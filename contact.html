@@ -325,22 +325,25 @@
         margin-bottom: 20px; /* Add spacing below the map link */
       }
 
-            /* Footer styling for smaller devices */
-      footer .container {
-        flex-direction: row; /* Stack footer sections vertically */
-        align-items: center;
-        font-size: 10px;
-      }
+  /* Footer styling for smaller devices */
+  footer .container {
+    flex-direction: column; /* Stack footer sections vertically */
+    align-items: center;
+    font-size: 10px; /* Adjust global font size for the footer */
+  }
 
-      footer .container > div {
-        width: 50%; /* Make each footer section take full width */
-        margin-bottom: 20px;
-      }
+  footer .container .contact-info,
+  footer .container .operation-hours,
+  footer .container .social-media {
+    width: 100%; /* Make each footer section take full width */
+    margin-bottom: 10px;
+    font-size: 10px; /* Set the font size for the mailing address */
+  }
 
-      footer .container .copyright {
+  footer .container .copyright {
     font-size: 9px; /* Reduce font size for copyright text */
   }
-    }
+}
   </style>
 </head>
 
