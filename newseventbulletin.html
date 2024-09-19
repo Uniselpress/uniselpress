@@ -207,6 +207,71 @@
     .section p {
       margin: 10px 0;
     }
+
+    /* Media Queries for Responsive Design */
+    @media only screen and (max-width: 768px) {
+
+      .content {
+        padding: 10px;
+        max-width: 100%;
+      }
+
+      .content h2 {
+        font-size: 20px;
+      }
+      
+      .floating-menu li a {
+        padding: 10px 10px; /* Reduce padding on mobile */
+      }
+
+      .clock-container {
+        display: none; /* Hide the clock on mobile devices */
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 11px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+
+      /* For extra small devices (phones) */
+    @media screen and (max-width: 480px) {
+      
+      /* Make navigation menu more compact */
+      .floating-menu li a {
+        padding: 10px 4px;
+        font-size: 12px; /* Smaller text */
+      }
+
+      /* Adjust the book images to fit smaller screens */
+      .book img {
+        width: 100px; /* Reduce size further */
+      }
+
+      /* Adjust logo size */
+      .logo-container img {
+        width: 100%; /* Adjust logo size on mobile */
+        padding: 80px;
+      }
+
+      /* Footer styling for smaller devices */
+      footer .container {
+        flex-direction: row; /* Stack footer sections vertically */
+        align-items: center;
+        font-size: 10px;
+      }
+
+      footer .container > div {
+        width: 50%; /* Make each footer section take full width */
+        margin-bottom: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -224,18 +289,27 @@
         <div class="dropdown-content">
           <a href="aboutuniselpress.html">About Unisel Press</a>
           <a href="organizationalstructure.html">Organizational Structure</a>
-          <a href="staff.html">Staff</a>
           <a href="publicationcommittee.html">Publication Committee</a>
         </div>
-      <li><a href="manuscript.html" >MANUSCRIPT</a></li>
       <li class="dropdown">
-        <a href="publication.html">PUBLICATION</a>
+        <a href="manuscript.html">MANUSCRIPT</a>
         <div class="dropdown-content">
-          <a href="journalpublication.html">Journal Publication</a>
-          <a href="listofpublication.html">List of Publication</a>
+          <a href="proposalguideline.html">Submission Guideline</a>
+          <a href="https://tinyurl.com/y63up7pc" target="_blank">Review Form</a>
+        </div>
+      <li class="dropdown">
+        <a href="publication.html" >PUBLICATION</a>
+        <div class="dropdown-content">
+          <a href="book.html">Books</a>
+          <a href="journal.html">Journals</a>
+          <a href="multimedia.html">Multimedia</a>
         </div>
       </li>
-      <li><a href="sales.html">SALES</a></li>
+      <li class="dropdown">
+        <a href="sales.html">SALES</a>
+        <div class="dropdown-content">
+          <a href="agents.html">Agents</a>
+        </div>
       <li><a href="contact.html">CONTACT</a></li>
     </ul>
   </div>
@@ -280,9 +354,8 @@
         
         <div class="operation-hours">
             <p><strong>Contact Details</strong></p>
-            <p>Phone: +603-XXXXXXX<br>
+            <p>Phone: +603-55223411<br>
             Mobile: +6012-3393066<br>
-            Fax: +603-XXXXXXXXX<br>
             Email: <a href="mailto:sidin@unisel.edu.my">sidin@unisel.edu.my</a> (Director)<br>
             Email: <a href="mailto:uniselpress@gmail.com">uniselpress@gmail.com</a></p>
         </div>
